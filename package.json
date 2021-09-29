@@ -1,0 +1,23 @@
+{
+  "name": "praticing_node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:gabrielFernandes-dev/PraticingNode.git",
+  "author": "Gabriel Fernandes <gabriel.work076@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13",
+    "sequelize-cli": "^6.2.0"
+  }
+}
