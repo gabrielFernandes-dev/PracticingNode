@@ -17,5 +17,7 @@ routes
 routes
   .route('/users/:id')
   .get(UserController.findOne)
+  .put(UserController.updateOne)
+  .patch(UserController.updateOne);
 
 module.exports = routes;
