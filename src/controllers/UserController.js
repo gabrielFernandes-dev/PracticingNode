@@ -53,11 +53,13 @@ module.exports = {
         email,
         password: await bcrypt.hash(password, 10),
       };
-      const user = await User.create(newUser);
-      console.log(user);
+      const user =await User.create(newUser);
+      const data = await User.findByPk(user.id, {
+        attributes: { exclude: ['password'] },
+      });
       res.status(201).json({
         status: 'success',
-        data: user,
+        data, 
       });
     } catch (err) {
       console.error(err);
@@ -79,6 +81,27 @@ module.exports = {
       res.status(200).json({
         status: 'success',
         data: await User.findByPk(+req.params.id),
+      });
+    } catch (err) {
+      console.error(err);
+      res.sendStatus(500);
+    }
+  },
+
+  async deleteOne(req, res) {
+    try {
+      const user = await User.destroy({
+        where: {
+          id: +req.params.id,
+        },
+      });
+      if (user === 0)
+        return res
+          .status(400)
+          .json({ status: 'fail', message: 'Bad Request. User not found!' });
+      res.status(201).json({
+        status: 'success',
+        message: `User id=${req.params.id} was successfully deleted.`,
       });
     } catch (err) {
       console.error(err);

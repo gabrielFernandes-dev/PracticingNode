@@ -6,10 +6,10 @@ routes.route('/').get((_req, res) => {
   res.status(200).json({ message: 'Root route works!' });
 });
 
-/* 
+/* *
 * =============
 * Users Route
-* */
+*/
 routes
   .route('/users')
   .get(UserController.findAll)
@@ -18,6 +18,7 @@ routes
   .route('/users/:id')
   .get(UserController.findOne)
   .put(UserController.updateOne)
-  .patch(UserController.updateOne);
+  .patch(UserController.updateOne)
+  .delete(UserController.deleteOne);
 
 module.exports = routes;
