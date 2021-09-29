@@ -6,8 +6,15 @@ routes.route('/').get((_req, res) => {
   res.status(200).json({ message: 'Root route works!' });
 });
 
+/* 
+* =============
+* Users Route
+* */
 routes
   .route('/users')
   .get(UserController.findAll);
+routes
+  .route('/users/:id')
+  .get(UserController.findOne)
 
 module.exports = routes;
