@@ -43,3 +43,20 @@ Content-Type: application/json
 # Delete an User
 DELETE http://localhost:8000/users/4
 Content-Type: application/json
+
+####==========================
+# Get Star Wars Characters
+GET http://localhost:8000/sw/people/4
+Content-Type: application/json
+
+
+####==========================
+# Get Star Wars Planets
+GET http://localhost:8000/sw/planets/2
+Content-Type: application/json
+
+####==========================
+# Get Star Wars Starships
+GET http://localhost:8000/sw/starships/3
+Content-Type: application/json
+
