@@ -27,28 +27,35 @@ Once you've done that, open a new terminal and run this command:
 </details>  
 <br/>
 
->> `$ docker run -p 5432:5432 -d \`  
->> `-e POSTGRES_USER=postgres \`  
->> `-e POSTGRES_PASSWORD=postgres` \  
->> `-v pgdta:/var/lib/postgresql/data \`   
->> `postgres`
-
+```
+$ docker run -p 5432:5432 -d \  
+-e POSTGRES_USER=postgres \  
+-e POSTGRES_PASSWORD=postgres \  
+-v pgdta:/var/lib/postgresql/data \   
+postgres
+```  
 _(This command allows you to run the postgresql official image with the needed configuration in the 'background')_
 
 Then, once you're inside the project directory you'll need to run the following command:
 
-> > `$ npm install`
+ ```
+ $ npm install
+ ```
 
 _(This command will allow you to install all the project dependecies)_
 
 Once you have all the dependencies installed on your local machine, you must open two separate terminals for running both the Users + StarWarsAPI and Authentication/Authorization requests handling servers.  
 So, in the first one you should run:
 
-> > `$ npm start`
+```
+$ npm start  
+```
 
 Then, in the second one you should run:
 
-> > `$ npm run start:auth`
+```
+$ npm run start:auth
+```
 
 <p align=center>
 This wraps things up. Your server should be up and running by now. Have fun and don't forget...
