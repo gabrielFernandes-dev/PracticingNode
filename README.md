@@ -23,7 +23,7 @@ Once you've done that, open a new terminal and run this command:
 
 <details>
     <summary> <b>HINT</b> </summary>
-     Make sure there are no other services running on port <i>5432</i> or you can change it to one that suits you better. If you're on Windows you'll have to open the <code>cmd</code> as an administrator, ohterwise you should probalby run this command with `sudo`.
+     Make sure there are no other services running on port <i>5432</i> or you can change it to one that suits you better. If you're on Windows you should try opening <code>cmd</code> as an administrator, ohterwise you should probably run this command as superuser with the <code>sudo</code> command.
 </details>  
 <br/>
 
