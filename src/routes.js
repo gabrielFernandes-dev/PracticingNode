@@ -12,7 +12,8 @@ routes.route('/').get((_req, res) => {
 * */
 routes
   .route('/users')
-  .get(UserController.findAll);
+  .get(UserController.findAll)
+  .post(UserController.insertOne);
 routes
   .route('/users/:id')
   .get(UserController.findOne)

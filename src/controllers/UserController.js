@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 const User = require('../models/Users');
 
 module.exports = {
@@ -31,8 +32,33 @@ module.exports = {
           .json({ status: 'success', message: 'User not found!' });
       res.status(200).json({
         status: 'success',
-        data: user
+        data: user,
       });
+    } catch (err) {
+      console.error(err);
+      res.sendStatus(500);
+    }
+  },
+
+  async insertOne(req, res) {
+    try {
+      const { name, job, email, password } = req.body;
+      if (!name || !job || !email || !password)
+        return res
+          .status(400)
+          .json({ status: 'fail', message: 'BadRequest. Missing fields!' });
+      const newUser = {
+        name,
+        job,
+        email,
+        password: await bcrypt.hash(password, 10),
+      };
+      const user = await User.create(newUser);
+      console.log(user);
+      res.status(201).json({
+          status: 'success',
+          data: user,
+      })
     } catch (err) {
       console.error(err);
       res.sendStatus(500);
