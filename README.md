@@ -86,7 +86,7 @@ Gabriel Fernandes, Frontend Developer Jr.
 
 > - _Brazillian, living on the state of Minas Gerais_
 > - _Currently going for a System Analysis and Development degree (Technician Degree)_
-> - _Currently working with React, Angular & Ionic/Angular stack in fronted development at Pluritech Brasil LTDA._
+> - _Currently working with a stack which contains React, Angular and Ionic/Angular in fronted development at Pluritech Brasil LTDA._
 
 #### **Contact:**
 
