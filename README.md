@@ -11,7 +11,7 @@ Thanks to the JWT library, on this API you'll be able to request a new token sin
 
 <details>
     <summary> <b>Quick Tip</b> </summary>
-    If you're on VSCode, check out the <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client" target="_blank">RestClient</a> extension. This is what the <code>.rest</code> file is for.
+    If you're on VSCode, check out the <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client" target="_blank">RestClient</a> extension. This is what the <code>.http</code> file is for.
 </details>  
 
 <br/>
