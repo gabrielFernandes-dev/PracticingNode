@@ -42,7 +42,7 @@ module.exports = {
 
   async insertOne(req, res) {
     try {
-      const { name, job, email, password } = req.body;
+      const { name, job, email, password, about } = req.body;
       if (!name || !job || !email || !password)
         return res
           .status(400)
@@ -50,16 +50,17 @@ module.exports = {
       const newUser = {
         name,
         job,
+        about,
         email,
         password: await bcrypt.hash(password, 10),
       };
-      const user =await User.create(newUser);
+      const user = await User.create(newUser);
       const data = await User.findByPk(user.id, {
         attributes: { exclude: ['password'] },
       });
       res.status(201).json({
         status: 'success',
-        data, 
+        data,
       });
     } catch (err) {
       console.error(err);
