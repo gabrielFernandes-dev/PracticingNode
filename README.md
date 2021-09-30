@@ -9,8 +9,13 @@
 This API was made exclusively for academic and portfolio exposure purposes. Here you'll be able to see and test basic CRUD operations in a `Users` context, plus authentication and authorization with the [**JTW**](https://www.npmjs.com/package/jsonwebtoken) lib, and finnaly, you'll be able to see a [Star Wars API](https://swapi.dev) integration (which depends on a login to have access to it). You'll be fully capable of requesting data about characters, starships and planets from the Star Wars Saga Univesrse. You can find some examples of how to do so on the [`requests.http`](https://github.com/gabrielFernandes-dev/PraticingNode/blob/master/requests.http) file.  
 Thanks to the JWT library, on this API you'll be able to request a new token since your first access token expires in a gap of ***3 minutes*** after logging in (feel free to lower or increase it on your pc). For the database, I went for a ***PostgreSQL*** instance running on a ***Docker*** [container](https://www.docker.com/resources/what-container). I also wen't for a [ORM](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping) instead of writing queries myself. In my case, I chose to use [Sequelize ORM](https://sequelize.org).
 
+<details>
+    <summary> <b>Quick Tip</b> </summary>
+    If you're on VSCode, check out the <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client" target="_blank">RestClient</a> extension. This is what the <code>.rest</code> file is for.
+</details>  
+
 <br/>
-<br/><br/>
+<br/>
 
 <h2 align=center>
 
