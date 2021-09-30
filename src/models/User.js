@@ -5,6 +5,7 @@ class User extends Model {
       {
         name: DataTypes.STRING,
         job: DataTypes.STRING,
+        about: DataTypes.STRING,
         email: DataTypes.STRING,
         password: DataTypes.STRING,
       },
