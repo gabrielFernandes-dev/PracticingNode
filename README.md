@@ -34,7 +34,7 @@ Once you've done that, open a new terminal and run this command:
 <br/>
 
 ```
-$ docker run -p 5432:5432 -d \  
+ docker run -p 5432:5432 -d \  
 -e POSTGRES_USER=postgres \  
 -e POSTGRES_PASSWORD=postgres \  
 -v pgdta:/var/lib/postgresql/data \   
@@ -48,12 +48,12 @@ Then, once you're inside the project directory you'll need to run the following 
 
 
 ```
-$ npx sequelize db:migrate
+ npx sequelize db:migrate
 ```
 _(This will do the hard work for you and handle the creation of the necessary tables)_.
 
  ```
- $ npm install
+  npm install
  ```
 _(This command will install all the project dependecies)_
 
@@ -61,13 +61,13 @@ Once you have all the dependencies installed on your local machine, you must ope
 So, in the first one, run:
 
 ```
-$ npm start  
+ npm start  
 ```
 
 Then run this in the next one:
 
 ```
-$ npm run start:auth
+ npm run start:auth
 ```
 
 <p align=center>
