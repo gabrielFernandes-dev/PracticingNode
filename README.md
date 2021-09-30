@@ -1,6 +1,6 @@
 <h1 align=center>
 
-    Praticing Node.js API
+    Practicing Node.js API
 
 </h1>
 
