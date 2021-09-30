@@ -74,5 +74,29 @@ module.exports = {
       console.log('Authorized.');
       next();
     });
-  },  
+  },
+
+  async deauthenticate(req, res) {
+    try {
+      const { token } = req.body.refreshToken;
+      if (!token)
+        return res.status(400).json({
+          status: 'fail',
+          message: 'Bad Request. Missing refresh token.',
+        });
+      const deletedToken = await Token.destroy({ where: { token } });
+      if (!deletedToken)
+        return res.status(400).json({
+          status: 'fail',
+          message: 'Bad Request. Token not valid.',
+        });
+      res.status(201).json({
+        status: 'success',
+        message: 'Logged out successfully!',
+      });
+    } catch (err) {
+      console.error(err);
+      res.sendStatus(500);
+    }
+  },
 };
