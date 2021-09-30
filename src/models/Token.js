@@ -4,9 +4,10 @@ class Token extends Model {
   static init(sequelize) {
     super.init(
       {
-        refreshToken: DataTypes.STRING,
+        refresh_token: { primaryKey: true, type: DataTypes.STRING },
       },
       {
+        timestamps: false,
         sequelize,
       }
     );

@@ -4,7 +4,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.createTable('tokens', {
-      refreshToken: {
+      refresh_token: {
         type: Sequelize.STRING,
         allowNull: false,
         primaryKey: true,
