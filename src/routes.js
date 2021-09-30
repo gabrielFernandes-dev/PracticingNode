@@ -1,6 +1,6 @@
 const StarWarsAPIController = require('./controllers/StarWarsAPIController');
 const UserController = require('./controllers/UserController');
-
+const { authorize } = require('./middlewares/Auth');
 const routes = require('express').Router();
 
 routes.route('/').get((_req, res) => {
@@ -26,8 +26,8 @@ routes
  * =============
  * Star Wars Integration Route
  */
-routes.route('/sw/people/:id').get(StarWarsAPIController.getCharacter);
-routes.route('/sw/planets/:id').get(StarWarsAPIController.getPlanet);
-routes.route('/sw/starships/:id').get(StarWarsAPIController.getStarship);
+routes.route('/sw/people/:id').get(authorize, StarWarsAPIController.getCharacter);
+routes.route('/sw/planets/:id').get(authorize, StarWarsAPIController.getPlanet);
+routes.route('/sw/starships/:id').get(authorize, StarWarsAPIController.getStarship);
 
 module.exports = routes;
