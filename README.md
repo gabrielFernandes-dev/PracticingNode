@@ -6,7 +6,9 @@
 
 ### **Description**
 
-This API was made exclusively for academic and portfolio exposure purposes. Here you'll be able to see and test basic CRUD operations in a `Users` context, plus authentication and authorization with the **JTW** lib, and finnaly, you'll be able to see a [Star Wars API](https://swapi.dev) integration. You'll be fully capable of requesting data about characters, starships and planets from the Star Wars Saga Univesrse. You can find some examples of how to do so on the [`requests.http`]('https://github.com/gabrielFernandes-dev/PraticingNodejs/requests.http') file.
+This API was made exclusively for academic and portfolio exposure purposes. Here you'll be able to see and test basic CRUD operations in a `Users` context, plus authentication and authorization with the [**JTW**](https://www.npmjs.com/package/jsonwebtoken) lib, and finnaly, you'll be able to see a [Star Wars API](https://swapi.dev) integration (which depends on a login to have access to it). You'll be fully capable of requesting data about characters, starships and planets from the Star Wars Saga Univesrse. You can find some examples of how to do so on the [`requests.http`](https://github.com/gabrielFernandes-dev/PraticingNode/blob/master/requests.http) file.  
+Thanks to the JWT library, on this API you'll be able to request a new token since your first access token expires in a gap of ***3 minutes*** after logging in (feel free to lower or increase it on your pc). For the database, I went for a ***PostgreSQL*** instance running on a ***Docker*** [container](https://www.docker.com/resources/what-container). I also wen't for a [ORM](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping) instead of writing queries myself. In my case, I chose to use [Sequelize ORM](https://sequelize.org).
+
 <br/>
 <br/><br/>
 
@@ -15,7 +17,6 @@ This API was made exclusively for academic and portfolio exposure purposes. Here
     Running this project
 
 </h2>
-<hr>
 
 **Requirements:**  
 For running this project first you need to install [Node.js](https://nodejs.org/en/download/) on your computer. You also gonna need to install [Docker](https://docs.docker.com/get-docker/) for persisting data on a **PostgreSQL** database container.  
@@ -35,23 +36,30 @@ $ docker run -p 5432:5432 -d \
 postgres
 ```  
 _(This command allows you to run the postgresql official image with the needed configuration in the 'background')_
+<br/>
 
-Then, once you're inside the project directory you'll need to run the following command:
+
+Then, once you're inside the project directory you'll need to run the following commands:
+
+
+```
+$ npx sequelize db:migrate
+```
+_(This will do the hard work for you and handle the creation of the necessary tables)_.
 
  ```
  $ npm install
  ```
+_(This command will install all the project dependecies)_
 
-_(This command will allow you to install all the project dependecies)_
-
-Once you have all the dependencies installed on your local machine, you must open two separate terminals for running both the Users + StarWarsAPI and Authentication/Authorization requests handling servers.  
-So, in the first one you should run:
+Once you have all the dependencies installed on your local machine, you must open ***two separate terminals*** for running both the Users + StarWarsAPI and Authentication/Authorization requests handling servers.  
+So, in the first one, run:
 
 ```
 $ npm start  
 ```
 
-Then, in the second one you should run:
+Then run this in the next one:
 
 ```
 $ npm run start:auth
@@ -67,7 +75,7 @@ May the froce be with you!
 <hr>
 <h2 align=center>
 
-    Additional Info
+    Plus
 
 </h2>
 <br/>
@@ -75,18 +83,18 @@ May the froce be with you!
 <p align=center>
 Hello there dear visitor! Hope you're enjoying this repo so far, I really put a lotta effort on it and hopefully I'll get a job at backend development soon. <br/> If I may, I'd like to ask for your help at this journey, so if you know any job opportunities, please tell 'em about what you've seen here. <br/>
 It'd be a great if I could get the chance of showing what my dedication and power of willing is capable of. <br/>
-And also you have any suggestions or criticisms, please feel free to express your opinion,  it's gonna be a huge pleasure to talk to you. Thanks mate!
+And also you have any suggestions or criticisms, please feel free to express your opinion,  it's gonna be a huge pleasure to talk to you and learn what you have to tell me.
 </p>
 
 #### **Author**:
 
 Gabriel Fernandes, Frontend Developer Jr.
 
-#### **About** :
+#### **About Me** :
 
 > - _Brazillian, living on the state of Minas Gerais_
 > - _Currently going for a System Analysis and Development degree (Technician Degree)_
-> - _Currently working with a stack which contains React, Angular and Ionic/Angular in fronted development at Pluritech Brasil LTDA._
+> - _Currently working with a stack which contains React, Angular and Ionic/Angular as an intern in fronted development at Pluritech Brasil LTDA._
 
 #### **Contact:**
 
