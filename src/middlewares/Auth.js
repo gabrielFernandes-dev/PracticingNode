@@ -45,4 +45,23 @@ module.exports = {
       res.sendStatus(500);
     }
   },
+
+  async refreshAccessToken(req, res) {
+    const { refreshToken } = req.body;
+    if (!refreshToken)
+      return res
+        .status(401)
+        .json({ status: 'fail', message: 'Bad Request. Verify your token!' });
+    const token = await Token.findByPk(refreshToken);
+    if (!token) return res.sendStatus(403);
+    jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
+      if (err) return res.sendStatus(403);
+      const accessToken = genAccessToken({ id: user.id, user: user.name });
+      res.status(201).json({
+        status: 'success',
+        accessToken,
+        refreshToken,
+      });
+    });
+  },
 };
