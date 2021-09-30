@@ -22,14 +22,13 @@ module.exports = {
           email: `${req.body.email}`,
         },
       });
-      const teste = await bcrypt.compare(req.body.password, user.password);
-      console.log('teste', teste);
-      if (teste) {
+      if (await bcrypt.compare(req.body.password, user.password)) {
         const accessToken = genAccessToken({ id: user.id, user: user.name });
         const refreshToken = jwt.sign(
           { user: user.name, id: user.id },
           process.env.REFRESH_TOKEN_SECRET
         );
+        await Token.create({ refresh_token: refreshToken });
         return res.status(200).json({
           status: 'Login successful',
           accessToken,
@@ -47,12 +46,14 @@ module.exports = {
   },
 
   async refreshAccessToken(req, res) {
-    const { refreshToken } = req.body;
+    const refreshToken = req.headers['authorization'];
     if (!refreshToken)
       return res
         .status(401)
         .json({ status: 'fail', message: 'Bad Request. Verify your token!' });
-    const token = await Token.findByPk(refreshToken);
+    const token = await Token.findOne({
+      where: { refresh_token: refreshToken },
+    });
     if (!token) return res.sendStatus(403);
     jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
       if (err) return res.sendStatus(403);
@@ -78,13 +79,15 @@ module.exports = {
 
   async deauthenticate(req, res) {
     try {
-      const { token } = req.body.refreshToken;
-      if (!token)
+      const refreshToken = req.headers['authorization'];
+      if (!refreshToken)
         return res.status(400).json({
           status: 'fail',
           message: 'Bad Request. Missing refresh token.',
         });
-      const deletedToken = await Token.destroy({ where: { token } });
+      const deletedToken = await Token.destroy({
+        where: { refresh_token: refreshToken },
+      });
       if (!deletedToken)
         return res.status(400).json({
           status: 'fail',
