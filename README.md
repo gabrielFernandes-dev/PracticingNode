@@ -1,26 +1,33 @@
+<p align=center>
+    <img src="https://nodejs.org/static/images/logo.svg">
+</p>
+
 <h1 align=center>
-
     Practicing Node.js API
-
 </h1>
 
-### **Description**
+<p align=center>
+    <a href="#desc">Description</a> | <a href="#run">Run Locally</a> | <a href="#"></a> | <a href="#"></a>
+</p>
+
+
+<h2 id="desc"> 
+    Description 
+</h2>
 
 This API was made exclusively for academic and portfolio exposure purposes. Here you'll be able to see and test basic CRUD operations in a `Users` context, plus authentication and authorization with the [**JTW**](https://www.npmjs.com/package/jsonwebtoken) lib, and finnaly, you'll be able to see a [Star Wars API](https://swapi.dev) integration (which depends on a login to have access to it). You'll be fully capable of requesting data about characters, starships and planets from the Star Wars Saga Univesrse. You can find some examples of how to do so on the [`requests.http`](https://github.com/gabrielFernandes-dev/PraticingNode/blob/master/requests.http) file.  
 Thanks to the JWT library, on this API you'll be able to request a new token since your first access token expires in a gap of ***3 minutes*** after logging in (feel free to lower or increase it on your pc). For the database, I went for a ***PostgreSQL*** instance running on a ***Docker*** [container](https://www.docker.com/resources/what-container). I also wen't for a [ORM](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping) instead of writing queries myself. In my case, I chose to use [Sequelize ORM](https://sequelize.org).
 
 <details>
-    <summary> <b>Quick Tip</b> </summary>
+    <summary> :exclamation: <b>Quick Tip</b> </summary>
     If you're on VSCode, check out the <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client" target="_blank">RestClient</a> extension. This is what the <code>.http</code> file is for.
 </details>  
 
 <br/>
 <br/>
-
-<h2 align=center>
-
-    Running this project
-
+    
+<h2 id="run">
+    Running Locally 
 </h2>
 
 **Requirements:**  
@@ -28,13 +35,13 @@ For running this project first you need to install [Node.js](https://nodejs.org/
 Once you've done that, open a new terminal and run this command:
 
 <details>
-    <summary> <b>HINT</b> </summary>
+    <summary> :warning: <b>HINT</b> </summary>
      Make sure there are no other services running on port <i>5432</i> or you can change it to one that suits you better. If you're on Windows you should try opening <code>cmd</code> as an administrator, ohterwise you should probably run this command as superuser with the <code>sudo</code> command.
 </details>  
 <br/>
 
 ```
- docker run -p 5432:5432 -d \  
+docker run -p 5432:5432 -d \  
 -e POSTGRES_USER=postgres \  
 -e POSTGRES_PASSWORD=postgres \  
 -v pgdta:/var/lib/postgresql/data \   
