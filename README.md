@@ -1,5 +1,8 @@
 <p align=center>
-    <img src="https://nodejs.org/static/images/logo.svg">
+    <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" width="80px">
+    <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/postgresql/postgresql.png" width="80px">
+    <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/docker/docker.png" width="80px">
+    <img src="https://vegibit.com/wp-content/uploads/2018/07/JSON-Web-Token-Authentication-With-Node.png" width="90px" >
 </p>
 
 <h1 align=center>
@@ -7,11 +10,12 @@
 </h1>
 
 <p align=center>
-    <a href="#desc">Description</a> | <a href="#run">Run Locally</a> | <a href="#"></a> | <a href="#"></a>
+    <a href="#desc">Description</a> | <a href="#run">Run Locally</a> | <a href="#plus">Plus</a> | <a href="#author">Author</a>
 </p>
 
 
-<h2 id="desc"> 
+<h2 align=center id="desc"> 
+    
     Description 
 </h2>
 
@@ -23,92 +27,86 @@ Thanks to the JWT library, on this API you'll be able to request a new token sin
     If you're on VSCode, check out the <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client" target="_blank">RestClient</a> extension. This is what the <code>.http</code> file is for.
 </details>  
 
-<br/>
-<br/>
+- - - -
+<h2 align=center id="run">
     
-<h2 id="run">
     Running Locally 
 </h2>
 
 **Requirements:**  
-For running this project first you need to install [Node.js](https://nodejs.org/en/download/) on your computer. You also gonna need to install [Docker](https://docs.docker.com/get-docker/) for persisting data on a **PostgreSQL** database container.  
+1. For running this project first you need to install [Node.js](https://nodejs.org/en/download/) on your computer. You also gonna need to install [Docker](https://docs.docker.com/get-docker/) for persisting data on a **PostgreSQL** database container.  
 Once you've done that, open a new terminal and run this command:
 
-<details>
-    <summary> :warning: <b>HINT</b> </summary>
-     Make sure there are no other services running on port <i>5432</i> or you can change it to one that suits you better. If you're on Windows you should try opening <code>cmd</code> as an administrator, ohterwise you should probably run this command as superuser with the <code>sudo</code> command.
-</details>  
-<br/>
+    <details>
+        <summary> :warning: <b>Before Running It</b> </summary>
+         Make sure there are no other services running on port <i>5432</i> or you can change it to one that suits you better. If you're on Windows you should try opening <code>cmd</code> as an administrator, ohterwise you should probably run this command as superuser with the <code>sudo</code> command.
+    </details>  
+    <br/>
 
-```
-docker run -p 5432:5432 -d \  
--e POSTGRES_USER=postgres \  
--e POSTGRES_PASSWORD=postgres \  
--v pgdta:/var/lib/postgresql/data \   
-postgres
-```  
-_(This command allows you to run the postgresql official image with the needed configuration in the 'background')_
-<br/>
+    ```
+    docker run -p 5432:5432 -d \  
+    -e POSTGRES_USER=postgres \  
+    -e POSTGRES_PASSWORD=postgres \  
+    -v pgdta:/var/lib/postgresql/data \   
+    postgres
+    ```  
 
+2. Then, once you're inside the project directory you'll need to run the following commands:  
+    
+    2.2 Execute migrations.
 
-Then, once you're inside the project directory you'll need to run the following commands:
+    ```
+     npx sequelize db:migrate
+    ```
 
+    2.3 Install project dependencies.
 
-```
- npx sequelize db:migrate
-```
-_(This will do the hard work for you and handle the creation of the necessary tables)_.
+     ```
+      npm install
+     ```
 
- ```
-  npm install
- ```
-_(This command will install all the project dependecies)_
-
-Once you have all the dependencies installed on your local machine, you must open ***two separate terminals*** for running both the Users + StarWarsAPI and Authentication/Authorization requests handling servers.  
+3. Once you have all the dependencies installed on your local machine, you must open ***two separate terminals*** for running both the Users + StarWarsAPI and Authentication/Authorization requests handling servers.  
 So, in the first one, run:
 
-```
- npm start  
-```
+    ```
+     npm start  
+    ```
 
-Then run this in the next one:
+4. Then run this in the next one:
 
-```
- npm run start:auth
-```
+    ```
+     npm run start:auth
+    ```
 
 <p align=center>
 This wraps things up. Your server should be up and running by now. Have fun and don't forget...
 </p>
 <p align=center>  
-May the froce be with you!
+May the froce be with you! <br/> 👾
 </p>
-<br/>
-<hr>
-<h2 align=center>
+
+- - - -
+<h2 align=center id="plus">
 
     Plus
-
 </h2>
-<br/>
 
 <p align=center>
-Hello there dear visitor! Hope you're enjoying this repo so far, I really put a lotta effort on it and hopefully I'll get a job at backend development soon. <br/> If I may, I'd like to ask for your help at this journey, so if you know any job opportunities, please tell 'em about what you've seen here. <br/>
+Hello there dear visitor!😃 Hope you're enjoying this repo so far, I really put a lotta effort & ⏲️ on it and hopefully I'll get a job at backend development soon. <br/> If I may, I'd like to ask for your help at this journey, so if you know any job opportunities, please tell 'em about what you've seen here. <br/>
 It'd be a great if I could get the chance of showing what my dedication and power of willing is capable of. <br/>
-And also you have any suggestions or criticisms, please feel free to express your opinion,  it's gonna be a huge pleasure to talk to you and learn what you have to tell me.
+And also you have any suggestions or criticisms, please feel free to express your opinion,  it's gonna be a huge pleasure to talk to you and learn what you have to tell me. <br/>
+    🎉 💻 😉 🚀 
 </p>
 
-#### **Author**:
+ - - - -
 
-Gabriel Fernandes, Frontend Developer Jr.
+<h2 align=center id="author">
+    
+    Author
+</h2>
 
-#### **About Me** :
-
+Gabriel Fernandes, Fronted Developer Jr.
 > - _Brazillian, living on the state of Minas Gerais_
 > - _Currently going for a System Analysis and Development degree (Technician Degree)_
 > - _Currently working with a stack which contains React, Angular and Ionic/Angular as an intern in fronted development at Pluritech Brasil LTDA._
 
-#### **Contact:**
-
-- Mail: gabriel.work076@gmail.com
-- Phone: _+55 (31) 99782-5681_
