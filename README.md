@@ -107,5 +107,6 @@ And also you have any suggestions or criticisms, please feel free to express you
 Gabriel Fernandes, Fronted Developer Jr.
 > - _Brazillian, living on the state of Minas Gerais_
 > - _Currently going for a System Analysis and Development degree (Technician Degree)_
-> - _Currently working with a stack which contains React, Angular and Ionic/Angular as an intern in fronted development at Pluritech Brasil LTDA._
+> - ~~_Currently working with a stack which contains React, Angular and Ionic/Angular as an intern in fronted development at Pluritech Brasil LTDA._~~
+> - _Currently working in Backend Development at LinkApi Solutions._
 
